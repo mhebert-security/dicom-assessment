@@ -1,0 +1,36 @@
+{
+  "Name" : "Orthanc",
+  "StorageDirectory" : "/var/lib/orthanc/db",
+  "IndexDirectory" : "/var/lib/orthanc/db",
+
+  "AuthenticationEnabled" : true,
+  "RegisteredUsers" : {
+    "pacs-admin" : "REPLACE_WITH_STRONG_PASSWORD"
+  },
+
+  "RemoteAccessAllowed" : false,
+  "SslEnabled" : false,
+
+  "DicomAet" : "ORTHANC",
+  "DicomPort" : 11112,
+  "DicomCheckCalledAet" : true,
+
+  "DicomModalities" : {
+    "CT_SCANNER_01" : [ "CT_UNIT_01", "10.20.30.10", 104 ],
+    "WS_RAD_01"    : [ "WS_RAD_01", "10.20.30.20", 11112 ]
+  },
+
+  "DicomTlsEnabled" : true,
+  "DicomTlsCertificate" : "/etc/orthanc/certs/orthanc.crt",
+  "DicomTlsPrivateKey" : "/etc/orthanc/certs/orthanc.key",
+  "DicomTlsTrustedCertificates" : "/etc/orthanc/certs/ca-bundle.crt",
+
+  "Plugins" : [
+  ],
+
+  "HttpDescribeErrors" : false,
+
+  "Verbose" : false,
+  "Trace" : false,
+  "LogFile" : "/var/log/orthanc/orthanc.log"
+}
